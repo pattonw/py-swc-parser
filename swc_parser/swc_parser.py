@@ -96,7 +96,6 @@ def _parse_swc(filename: Path):
 def _search_swc_header(line: str, key: str, default: np.ndarray) -> np.ndarray:
     # assumes header variables are seperated by spaces
     if key in line.lower():
-        print(line.lower().split(key)[1].split())
         value = np.array([float(x) for x in line.lower().split(key)[1].split()])
         return value
     else:
